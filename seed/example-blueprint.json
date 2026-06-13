@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "templateName": "Acme Studio Business OS",
+  "businessName": "Acme Studio",
+  "style": "operator",
+  "summary": "A practical operating system for a service business that needs a clear command center, CRM, delivery tracking, content planning, financial visibility, SOPs, and team knowledge.",
+  "dashboard": {
+    "title": "Acme Studio Main Dashboard",
+    "sections": [
+      "This week priorities",
+      "Open deals",
+      "Active projects",
+      "Overdue tasks",
+      "Content pipeline",
+      "Finance snapshot"
+    ]
+  },
+  "databases": [
+    {
+      "key": "crm",
+      "name": "CRM",
+      "description": "Track leads, clients, sales stages, owners, and next actions.",
+      "properties": [
+        { "name": "Name", "type": "title" },
+        { "name": "Stage", "type": "select", "options": ["Lead", "Qualified", "Proposal", "Won", "Lost"] },
+        { "name": "Value", "type": "number" },
+        { "name": "Next Action", "type": "rich_text" },
+        { "name": "Follow Up", "type": "date" }
+      ],
+      "sampleEntries": [
+        { "title": "Northstar Co", "properties": { "Stage": "Proposal", "Value": 12000, "Next Action": "Send implementation timeline", "Follow Up": "2026-07-01" } }
+      ]
+    },
+    {
+      "key": "projects",
+      "name": "Projects",
+      "description": "Manage client and internal projects from kickoff through delivery.",
+      "properties": [
+        { "name": "Project", "type": "title" },
+        { "name": "Status", "type": "select", "options": ["Planning", "Active", "Blocked", "Done"] },
+        { "name": "Owner", "type": "rich_text" },
+        { "name": "Due", "type": "date" }
+      ],
+      "sampleEntries": [
+        { "title": "Website launch", "properties": { "Status": "Active", "Owner": "Founder", "Due": "2026-07-15" } }
+      ]
+    },
+    {
+      "key": "tasks",
+      "name": "Tasks",
+      "description": "Track operational tasks with owners, priority, and due dates.",
+      "properties": [
+        { "name": "Task", "type": "title" },
+        { "name": "Priority", "type": "select", "options": ["Low", "Medium", "High"] },
+        { "name": "Done", "type": "checkbox" },
+        { "name": "Due", "type": "date" }
+      ],
+      "sampleEntries": [
+        { "title": "Draft onboarding SOP", "properties": { "Priority": "High", "Done": false, "Due": "2026-07-03" } }
+      ]
+    },
+    {
+      "key": "content-calendar",
+      "name": "Content Calendar",
+      "description": "Plan posts, campaigns, publish dates, channels, and status.",
+      "properties": [
+        { "name": "Content", "type": "title" },
+        { "name": "Channel", "type": "multi_select", "options": ["LinkedIn", "Newsletter", "Blog", "YouTube"] },
+        { "name": "Status", "type": "select", "options": ["Idea", "Draft", "Scheduled", "Published"] },
+        { "name": "Publish Date", "type": "date" }
+      ],
+      "sampleEntries": [
+        { "title": "Founder story post", "properties": { "Channel": "LinkedIn", "Status": "Draft", "Publish Date": "2026-07-05" } }
+      ]
+    },
+    {
+      "key": "finance-tracker",
+      "name": "Finance Tracker",
+      "description": "Monitor revenue, expenses, invoices, and cash flow signals.",
+      "properties": [
+        { "name": "Item", "type": "title" },
+        { "name": "Type", "type": "select", "options": ["Revenue", "Expense"] },
+        { "name": "Amount", "type": "number" },
+        { "name": "Date", "type": "date" }
+      ],
+      "sampleEntries": [
+        { "title": "Retainer invoice", "properties": { "Type": "Revenue", "Amount": 5000, "Date": "2026-07-01" } }
+      ]
+    },
+    {
+      "key": "sop-tracker",
+      "name": "SOP Tracker",
+      "description": "Keep SOP documents organized by owner, workflow, and review status.",
+      "properties": [
+        { "name": "SOP", "type": "title" },
+        { "name": "Workflow", "type": "select", "options": ["Sales", "Delivery", "Finance", "Content"] },
+        { "name": "Owner", "type": "rich_text" },
+        { "name": "Reviewed", "type": "checkbox" }
+      ],
+      "sampleEntries": [
+        { "title": "Client onboarding", "properties": { "Workflow": "Delivery", "Owner": "Ops Lead", "Reviewed": false } }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "key": "sop-hub",
+      "title": "SOP Hub",
+      "purpose": "Centralize repeatable procedures and workflow documentation.",
+      "sections": ["Sales handoff", "Client onboarding", "Project delivery", "Invoice follow-up"]
+    },
+    {
+      "key": "team-wiki",
+      "title": "Team Wiki",
+      "purpose": "Document roles, responsibilities, links, and internal knowledge.",
+      "sections": ["Roles", "Meeting rhythms", "Tool links", "Decision log"]
+    },
+    {
+      "key": "main-dashboard-notes",
+      "title": "Dashboard Notes",
+      "purpose": "Capture operating notes that support the main dashboard.",
+      "sections": ["Weekly review", "Risks", "Ideas", "Decisions"]
+    }
+  ]
+}
